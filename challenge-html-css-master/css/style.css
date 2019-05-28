@@ -1,0 +1,255 @@
+/*
+
+Vert: #7ed56f
+Vert medium: #55c57a
+Dark vert: #28b485
+
+*/
+
+/* Copyright @TIJANI ABDELLATIF 
+Front web developer 
+
+*/ 
+
+/* normaliser le css */
+
+*
+{
+    font-weight: 400;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-family:'Lato', sans-serif;
+
+    
+}
+
+body {
+
+    /*margin: top right bottom left*/
+    margin:20px 20px 0 20px;
+
+}
+
+/* le corps de la page */
+.header 
+{
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)),url("../img/hero.jpg"); 
+    height: 590PX;
+    position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+    background-size: cover;
+}
+
+.logo
+{
+  animation-name: moveInBottom;
+  animation-duration: 4s;
+}
+
+.logowhite
+{
+    padding: 20px;
+    width: 80px;
+
+}
+
+.main
+{
+    text-align: center;
+    padding: 8%;
+    color: white;
+}
+.heading1{
+    font-weight: 400;
+    margin-bottom: 90px;
+    display: grid;
+}
+.heading11
+{
+    animation-name: moveInLeft;
+    animation-duration: 4s;
+    display: block;
+    font-size: 60px;
+    letter-spacing: 45px;
+    padding-bottom: 20px;
+}
+
+.heading12
+{
+    animation-name: moveInRight;
+    animation-duration: 4s;
+    letter-spacing: 18px;
+    font-size: 18px;
+    padding-left: -10px;
+}
+
+/* Animation */ 
+
+@keyframes moveInLeft
+{
+    0%
+    {
+       transform: translateX(-200px);
+       opacity: 0;
+    }
+
+   /* 60%
+    {
+       transform: rotate(30deg) ;
+    }
+    */
+
+    80%
+    {
+        opacity: 0.5;
+    }
+
+    100%
+    {
+       opacity: 1;
+    }
+}
+
+@keyframes moveInRight
+{
+    0%
+    {
+      
+       transform: translateX(200px);
+       opacity: 0;
+    }
+
+   /* 60%
+    {
+       transform: rotate(-30deg) ;
+    }
+    */
+
+    80%
+    {
+        opacity: 0.5;
+    }
+
+    100%
+    {
+       opacity: 1;
+       
+
+    }
+}
+
+
+
+@keyframes moveInBottom
+{
+    0%
+    {
+       transform: translateY(-50px);
+       opacity: 0
+
+       
+    }
+
+    80%
+    {
+      opacity: 0.5;
+
+    }
+
+    100%
+    {
+       opacity: 1;
+
+    }
+}
+
+/* bouton */ 
+.btn:link,.btn:visited
+{
+   margin-top: 3%;
+   margin-left: 40%;
+   margin-right: 40%;
+   text-transform: uppercase;
+   text-decoration: none;
+   font-family: lato, sans-serif;
+   font-size: 12px;
+   padding: 15px 40px;
+   display: inline-block;
+   position: relative;
+   border-radius: 100px;
+   animation: moveInLeft 2s ease-out;
+
+
+}
+
+.btn:hover{
+    /*transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);*/
+  
+
+}
+.btn:active
+{
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+   
+}
+
+.btn-white
+{
+   text-decoration: none;
+   color: gray;
+   background-color: #fff;
+   border-radius: 30px;
+   padding: 20px;
+
+}
+
+/* animer le boutton behind the scene  */ 
+
+.btn::after /* l'element fils apres le bouton */
+{
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: .5s;
+
+  
+
+}
+
+.btn-white::after /* l'element fils apres le bouton */{
+  /* 
+    mettez l'element en rouge pour voir la difference
+   background-color:red;
+   */
+background-color: #fff;
+border-radius: 50px;
+}
+
+.btn:hover::after
+{
+    transform: scale(1.8,1.8);
+    background-color: #fff;
+    opacity: 0;
+    transition: .5s;
+ 
+
+}
+.btn-animated 
+{
+  animation: moveInRight .5s ease-out .75s;
+  animation-fill-mode: backwards;
+}
+
+
+
+
+ 
+ 
